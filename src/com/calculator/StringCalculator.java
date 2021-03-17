@@ -12,7 +12,7 @@ public class StringCalculator {
 			return 0;
 		else if(numbers.contains(","))
 		{
-			List<Integer> numList = Arrays.stream(numbers.split(",")).map(Integer::parseInt).collect(Collectors.toList());
+			List<Integer> numList = Arrays.stream(numbers.split(",|\\n")).map(Integer::parseInt).collect(Collectors.toList());
 		    int sum = numList.stream().reduce(0, (num1,num2)->num1+num2);
 			
 			return sum;

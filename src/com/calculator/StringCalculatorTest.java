@@ -29,6 +29,11 @@ class StringCalculatorTest {
 		
 		assertEquals(10, cal.add("1,2,3,4"));
 	}
+	@Test
+	public void shouldReturnSumOfMultipleNumbersWithNewLineDelimeter() {
+		
+		assertEquals(6, cal.add("1\n2,3"));
+	}
 	
 	
 	
