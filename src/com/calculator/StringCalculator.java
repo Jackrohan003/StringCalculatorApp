@@ -25,7 +25,12 @@ public class StringCalculator {
 	public int getSumWithDelimeter(String numbers,String delimiter)
 	{
 		List<Integer> numList = Arrays.stream(numbers.split(delimiter+"|\\n")).map(Integer::parseInt).collect(Collectors.toList());
-	    int sum = numList.stream().reduce(0, (num1,num2)->num1+num2);
+	    int sum = numList.stream().reduce(0, (num1,num2)->{
+	    	if(num1>=0 && num2 >=0 )
+	    		return num1+num2;
+	    	else
+	    		throw new RuntimeException("Negative Not allowed");
+	    });
 		
 		return sum;
 	}

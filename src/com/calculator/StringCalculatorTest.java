@@ -41,6 +41,20 @@ class StringCalculatorTest {
 		assertEquals(3, cal.add("//;\n1;2"));
 	}
 	
+	@Test
+	public void shouldRaiseExceptionOnNegativeNumbers() {
+		
+		try {
+			cal.add("//;\n-1;-2;-3;-4");
+			fail("Exception Should be generated");
+		}
+		catch(RuntimeException e)
+		{
+			System.out.println(e);
+		}
+		
+	}
+	
 	
 	
 	
