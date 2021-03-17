@@ -35,6 +35,13 @@ class StringCalculatorTest {
 		assertEquals(6, cal.add("1\n2,3"));
 	}
 	
+	@Test
+	public void shouldReturnSumOfMultipleNumbersWithDifferentDelimeterStartingWithDoubleSlash() {
+		
+		assertEquals(3, cal.add("//;\n1;2"));
+	}
+	
+	
 	
 	
 
