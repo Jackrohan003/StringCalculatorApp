@@ -24,5 +24,13 @@ class StringCalculatorTest {
 		assertEquals(3, cal.add("1,2"));
 	}
 	
+	@Test
+	public void shouldReturnSumOfMultipleNumbers() {
+		
+		assertEquals(10, cal.add("1,2,3,4"));
+	}
+	
+	
+	
 
 }
