@@ -64,7 +64,11 @@ public class StringCalculator {
 	    	}
 	    	delimiter=res;
 	    }
-	    
+	    if(s.indexOf(opningBracket)!=s.lastIndexOf(opningBracket))
+	    {
+	    	delimiter+="|";
+	    	delimiter+=s.substring(s.lastIndexOf(opningBracket)+1, s.lastIndexOf(closingBracket));
+	    }
 	    
 		return delimiter;
 	}
