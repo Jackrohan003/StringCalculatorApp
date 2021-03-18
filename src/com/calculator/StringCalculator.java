@@ -5,9 +5,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class StringCalculator {
-
+ 
+	static int counterOfAddMethod=0;
+	
 	public int add(String numbers)
 	{
+		counterOfAddMethod++; 
 		if(numbers==null || numbers.isEmpty())
 			return 0;
 		else if(numbers.startsWith("//"))
@@ -28,14 +31,15 @@ public class StringCalculator {
 	    List<Integer> negativeList = numList.stream().filter(number -> number<0).collect(Collectors.toList());
 	    
 	    if(negativeList.size()>0)
-	    {
 	    	throw new RuntimeException("Negative Not allowed"+negativeList);
-	    }
 	    
-		int sum = numList.stream().reduce(0, (num1,num2)->num1+num2);
-	   
+		int sum = numList.stream().reduce(0, (num1,num2)->num1+num2);	   
 		return sum;
 	}
 	
+	public static int getCalledCount()
+	{
+		return counterOfAddMethod;
+	}
 	
 }
