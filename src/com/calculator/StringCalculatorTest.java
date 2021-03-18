@@ -102,13 +102,19 @@ class StringCalculatorTest {
 		
 		assertEquals(6, cal.add("//[*][%]\n1*2%3"));
 	}
+	@Test
+	@Order(12)
+	public void shouldReturnSumOfNumbersWithMultipleDelimitersWithAnyLength() {
+		
+		assertEquals(6, cal.add("//[**][%%]\n1**2%%3"));
+	}
 
 	
 	@Test
 	@AfterAll
 	public void shouldReturnCountOfAddMethodCalled() {
 		
-		assertEquals(11, StringCalculator.getCalledCount());
+		assertEquals(12, StringCalculator.getCalledCount());
 	}
 	
 	
