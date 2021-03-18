@@ -55,6 +55,20 @@ class StringCalculatorTest {
 		
 	}
 	
+	@Test
+	public void shouldRaiseExceptionOnNegativeNumbersAndPrintThoseNumbers() {
+		
+		try {
+			cal.add("//;\n-1;-2;-3;4");
+			fail("Exception Should be generated");
+		}
+		catch(RuntimeException e)
+		{
+			System.out.println(e);
+		}
+		
+	}
+	
 	
 	
 	
