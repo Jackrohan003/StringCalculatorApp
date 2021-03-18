@@ -91,10 +91,18 @@ class StringCalculatorTest {
 	}
 	
 	@Test
+	@Order(10)
+	public void shouldReturnSumOfMultipleNumbersWithDifferentDelimeterCanBeAnyLength() {
+		
+		assertEquals(6, cal.add("//[***]\n1***2***3"));
+	}
+
+	
+	@Test
 	@AfterAll
 	public void shouldReturnCountOfAddMethodCalled() {
 		
-		assertEquals(9, StringCalculator.getCalledCount());
+		assertEquals(10, StringCalculator.getCalledCount());
 	}
 	
 	

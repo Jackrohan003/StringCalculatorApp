@@ -16,7 +16,10 @@ public class StringCalculator {
 		else if(numbers.startsWith("//"))
 		{
 			String  delimiter = Character.toString(numbers.charAt(2));
-			numbers = numbers.substring(4);
+			if(numbers.contains("["))
+				delimiter = getDelimiter(numbers);
+			
+			numbers = numbers.substring(numbers.indexOf("\n")+1);
 			
 			return getSumWithDelimeter(numbers,delimiter);
 		}
@@ -41,5 +44,30 @@ public class StringCalculator {
 	{
 		return counterOfAddMethod;
 	}
+	
+	public static String getDelimiter(String s)
+	{
+		String opningBracket = "[";
+		String closingBracket = "]";
+				
+	    String delimiter = s.substring(s.indexOf(opningBracket)+1, s.indexOf(closingBracket));	
+		
+	    if(delimiter.contains("*"))
+	    {
+	    	String res="";
+	    	for(int i=0;i<delimiter.length();i++)
+	    	{
+	    		if(delimiter.charAt(i)=='*')
+	    		{
+	    			res+="\\*";
+	    		}
+	    	}
+	    	delimiter=res;
+	    }
+	    
+	    
+		return delimiter;
+	}
+	
 	
 }
