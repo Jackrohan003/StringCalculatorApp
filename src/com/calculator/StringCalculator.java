@@ -33,7 +33,7 @@ public class StringCalculator {
 	    if(negativeList.size()>0)
 	    	throw new RuntimeException("Negative Not allowed"+negativeList);
 	    
-		int sum = numList.stream().reduce(0, (num1,num2)->num1+num2);	   
+		int sum = numList.stream().filter(number -> number<1001).reduce(0, (num1,num2)->num1+num2);	   
 		return sum;
 	}
 	

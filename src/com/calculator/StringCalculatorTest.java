@@ -83,12 +83,18 @@ class StringCalculatorTest {
 		}
 		
 	}
+	@Test
+	@Order(9)
+	public void shouldReturnSumWithoutIncludedBiggerThan1000() {
+		
+		assertEquals(3, cal.add("//;\n1;2;1001"));
+	}
 	
 	@Test
 	@AfterAll
 	public void shouldReturnCountOfAddMethodCalled() {
 		
-		assertEquals(8, StringCalculator.getCalledCount());
+		assertEquals(9, StringCalculator.getCalledCount());
 	}
 	
 	
